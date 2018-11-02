@@ -15,7 +15,11 @@ class MySQLWikipedia():
 
     def __init__(self):
         """初始化连接数据：并且启动数据库连接:使用后记得关闭连接"""
-
+        self.host = '127.0.0.1'
+        self.port = 3306
+        self.user = 'root'
+        self.password = '123'
+        self.db = 'lsx'
 
         # 开始连接数据库
         conn = pymysql.connect(host=self.host, port=self.port, user=self.user,
