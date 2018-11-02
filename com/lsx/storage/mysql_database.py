@@ -10,11 +10,7 @@ class MysqlDB():
 
     def __init__(self):
         """初始化连接数据：并且启动数据库连接:使用后记得关闭连接"""
-        self.host = 'dcdbt-inn8atzv.sql.tencentcdb.com'
-        self.port = 85
-        self.user = 'XhhRoot'
-        self.password = 'Xhh123587946.'
-        self.db ='xhh_test'
+
 
         #开始连接数据库
         conn = pymysql.connect(host=self.host, port=self.port, user=self.user,
