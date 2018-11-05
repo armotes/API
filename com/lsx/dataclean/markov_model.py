@@ -40,23 +40,17 @@ def buildWordDict(text):
     #words就是个单词列表
 
     # words = ['Called', 'from', 'a']
-    #wordDict 二维字典
+    #wordDict 二维大字典
     #wordDict = 'pledge': {'heretofore': 1, 'I': 1}, 'circumstances': {'will': 1, 'of': 3, 'in': 1, 'attending': 1, 'have': 1}
     wordDict = {}
     for i in range(1,len(words)):
         if words[i-1] not in wordDict:
-            #为单词新建一个字典(对象),以及初始化1-1=0下标#单词就是属性名称,数量就是属性值
+            #二维字典:在wordDict大字典里面给单词在创建一个字典,以及初始化1-1=0下标#单词就是属性名称,数量就是属性值
             wordDict[words[i-1]] = {}
         #如果当前单词不在字典的前一个值里面,那么初始化字典,并且当前出现次数为0
         if words[i] not in wordDict[words[i-1]]:
             wordDict[words[i-1]][words[i]] = 0      #字典里面存放的是每个单词数出现的次数
         wordDict[words[i-1]][words[i]] = wordDict[words[i-1]][words[i]]+1
-        if i == 10 :
-            print(words[i])
-            print( wordDict[words[i-1]])
-            #print(wordDict['continue'])
-            print( wordDict[words[i - 1]][words[i]])
-    print(wordDict)
     return wordDict
 
 text = str(urlopen('http://pythonscraping.com/files/inaugurationSpeech.txt').read(),'utf-8')
